@@ -108,3 +108,8 @@ md-radio-button {
 md-divider {
   margin: 10px 0 !important;
 }
+
+////////////////////////////////
+[layout-gt-md=row] > * {
+  max-width: 50%;
+}
