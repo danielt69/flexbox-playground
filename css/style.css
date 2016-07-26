@@ -1,27 +1,22 @@
-@import "compass";
-
-// Flex container
 .flexbox-parent {
-  @include display-flex;
+  display: -webkit-flex;
+  display: flex;
   background: #FFD54F;
   overflow: hidden;
   width: 100%;
   padding: 3px;
   min-height: 550px;
   max-height: 1000px;
-
-  // Flex items
-  > div {
-    display: inline-block;
-    background: white;
-    overflow: hidden;
-    margin: 3px;
-    padding: 5px;
-
-    .child-controls {
-      margin-top: 7px;
-    }
-  }
+}
+.flexbox-parent > div {
+  display: inline-block;
+  background: white;
+  overflow: hidden;
+  margin: 3px;
+  padding: 5px;
+}
+.flexbox-parent > div .child-controls {
+  margin-top: 7px;
 }
 
 .child-number {
@@ -34,7 +29,9 @@
   font-weight: bold;
   padding-top: 3px;
   text-align: center;
-  @include border-radius(50%);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
   float: left;
 }
 
@@ -62,12 +59,10 @@
   float: right;
 }
 
-.clearfix {
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .right-padding {
@@ -85,20 +80,18 @@ p {
 
 md-input-container {
   padding: 0 0 5px 0 !important;
-
-  .md-input {
-    padding: 0 !important;
-    line-height: 1em !important;
-  }
+}
+md-input-container .md-input {
+  padding: 0 !important;
+  line-height: 1em !important;
 }
 
 md-select {
   margin-top: 0 !important;
-
-  .md-select-label {
-    padding-top: 2px !important;
-    padding-bottom: 4px !important;
-  }
+}
+md-select .md-select-label {
+  padding-top: 2px !important;
+  padding-bottom: 4px !important;
 }
 
 md-radio-button {
@@ -109,7 +102,6 @@ md-divider {
   margin: 10px 0 !important;
 }
 
-////////////////////////////////
 [layout-gt-md=row] > * {
   max-width: 50%;
 }
